@@ -1,15 +1,8 @@
 <html>
-  <body>
-    <div
-      class="codepen"
-      data-theme-id="36294"
-      data-prefill
-      data-editable="true"
-      data-height="100%"
-      data-theme-id="1"
-      data-default-tab="js,result"
-    >
-      <pre data-lang="css">
+
+<body>
+    <div class="codepen" data-theme-id="36294" data-prefill data-editable="true" data-height="100%" data-theme-id="1" data-default-tab="js,result">
+        <pre data-lang="css">
 
 body {
   font: 1.2em sans-serif;
@@ -34,7 +27,7 @@ input[type='submit'] {
   margin-top: 10px;
 }   
       </pre>
-      <pre data-lang="html">
+        <pre data-lang="html">
 &lt;div class=&quot;tiles&quot;&gt;
   &lt;div&gt;
     &lt;h2&gt;Contact Us&lt;/h2&gt;
@@ -48,10 +41,24 @@ input[type='submit'] {
       <pre data-lang="js">
 // Count the number of 'a' characters in the email form. 
 // Update button to reflect that number.  
+      const match = 'a';
 
+      document.querySelector('.submit').onclick = displayMatches;
+
+      function displayMatches(){
+        const email = document.getElementById('email').value
+        let a_count = 0;
+        for (let char of email){
+          if(char === match){
+            a_count = a_count + 1;
+          }
+        }
+        console.log(a_count);
+        document.querySelector('.submit').value = a_count + ' matches';
+      }
       </pre>
     </div>
-
     <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-  </body>
+</body>
+
 </html>

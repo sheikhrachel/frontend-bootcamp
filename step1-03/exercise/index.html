@@ -56,7 +56,28 @@ button {
    div at the bottom of the page. Set the div's `textContent` to `favList.join(' ')`.
    This will join each of the foods together into a string separated by a space.
 */
-
+      function getFavs() {
+        // 1.
+        // alert('clicked');
+        // 4.
+        let favList = [];
+        // 5.
+        const inputs = document.querySelectorAll('input');
+        // 6.
+        for (const input of inputs) {
+          // 7.
+          if (input.checked === true){
+            // 8.
+            favList.push(input.parentNode.textContent);
+          }
+        }
+        // 9.
+        document.querySelector('.favorites').textContent = favList.join(' ');
+        console.log(favList);
+        }
+      // 2., 3.
+      let button = document.querySelector('button');
+      button.addEventListener('click', getFavs);
       </pre>
     </div>
 
